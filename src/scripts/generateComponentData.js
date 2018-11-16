@@ -1,4 +1,4 @@
-import fs, { writeFile } from 'fs';
+import fs from 'fs';
 import { join } from 'path';
 import chalk from 'chalk';
 import parse from 'react-docgen';

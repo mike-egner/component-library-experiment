@@ -1,17 +1,17 @@
-import fs from 'fs';
-import { join } from 'path';
-import chalk from 'chalk';
-import parse from 'react-docgen';
-import chokidar from 'chokidar';
+const fs = require('fs');
+const path = require('path');
+const chalk = require('chalk');
+const parse = require('react-docgen').parse;
+const chokidar = require('chokidar');
 
 var paths = {
-    examples: join(__dirname, '../src', 'docs', 'examples'),
-    components: join(__dirname, '../src', 'components'),
-    output: join(__dirname, '../config', 'componentData.js')
+    examples: path.join(__dirname, '../src', 'docs', 'examples'),
+    components: path.join(__dirname, '../src', 'components'),
+    output: path.join(__dirname, '../config', 'componentData.js')
 };
 
 const enableWatchMode = process.argv.slice(2) == '--watch';
-if (enablewatchMode) {
+if (enableWatchMode) {
     //Regenerate component metadata when components or examples change.
     chokidar.watch([paths.examples, paths.components]).on('change', function(event, path){
         generateKeyPair(paths);

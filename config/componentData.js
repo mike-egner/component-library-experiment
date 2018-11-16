@@ -1,1 +1,0 @@
-module.exports = ["An error occurred while attempting to generate metadata for HelloWorld. ReferenceError: getExampleFiles is not defined"]

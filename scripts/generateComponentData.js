@@ -61,6 +61,16 @@ function getExampleData(examplesPath, componentName) {
     });
 }
 
+function getExampleFiles(examplesPath, componentName) {
+    var exampleFiles = [];
+    try {
+        exampleFiles = getFiles(path.join(examplesPath, componentName));
+    } catch(error) {
+        console.log(chalk.red(`No examples found for ${componentName}.`));
+    }
+    return exampleFiles;
+}
+
 //utilities
 
 function getDirectores(filepath) {
